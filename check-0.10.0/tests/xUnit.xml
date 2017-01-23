@@ -22,7 +22,7 @@
 					Failure running iteration 2
 				</failure>
 			</testcase>
-		<testsuite>
+		</testsuite>
 		<testsuite>
 			<testcase name="test_xml_esc_fail_msg" classname="escapeTests" time="0.001">
 				<failure message="failure message">
