@@ -47,12 +47,11 @@ START_TEST(test_pass2)
 }
 END_TEST
 
-/* START_TEST(test_loop)
-* {
-*     ck_assert_msg(_i == 1, "Iteration %d failed", _i);
-* }
-* END_TEST
-*/
+START_TEST(test_loop)
+{
+    ck_assert_msg(_i == 1, "Iteration %d failed", _i);
+}
+END_TEST
 
 START_TEST(test_xml_esc_fail_msg)
 {
@@ -69,7 +68,7 @@ static Suite *make_log1_suite(void)
     tc = tcase_create("Core");
     suite_add_tcase(s, tc);
     tcase_add_test(tc, test_pass);
-/*    tcase_add_test(tc, test_fail); */
+//    tcase_add_test(tc, test_fail);
 #if defined(HAVE_FORK) && HAVE_FORK==1
     tcase_add_test(tc, test_exit);
 #endif /* HAVE_FORK */
@@ -90,7 +89,7 @@ static Suite *make_log2_suite(int include_exit_test)
         tcase_add_test(tc, test_abort);
     }
     tcase_add_test(tc, test_pass2);
-/*    tcase_add_loop_test(tc, test_loop, 0, 3); */
+    tcase_add_loop_test(tc, test_loop, 0, 3); 
 
     return s;
 }
@@ -133,7 +132,7 @@ static void run_tests(enum print_output printmode, char *log_type, int include_e
 
     sr = srunner_create(make_log1_suite());
     srunner_add_suite(sr, make_log2_suite(include_exit_test));
-    srunner_add_suite(sr, make_xml_esc_suite());
+//    srunner_add_suite(sr, make_xml_esc_suite());
 
     if(strcmp(log_type, "STDOUT") == 0)
     {
