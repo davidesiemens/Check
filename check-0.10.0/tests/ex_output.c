@@ -47,11 +47,12 @@ START_TEST(test_pass2)
 }
 END_TEST
 
-START_TEST(test_loop)
-{
-    ck_assert_msg(_i == 1, "Iteration %d failed", _i);
-}
-END_TEST
+/* START_TEST(test_loop)
+* {
+*     ck_assert_msg(_i == 1, "Iteration %d failed", _i);
+* }
+* END_TEST
+*/
 
 START_TEST(test_xml_esc_fail_msg)
 {
@@ -89,7 +90,7 @@ static Suite *make_log2_suite(int include_exit_test)
         tcase_add_test(tc, test_abort);
     }
     tcase_add_test(tc, test_pass2);
-    tcase_add_loop_test(tc, test_loop, 0, 3);
+/*    tcase_add_loop_test(tc, test_loop, 0, 3); */
 
     return s;
 }
