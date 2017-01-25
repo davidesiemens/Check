@@ -19,7 +19,7 @@
  */
 
 #include "../lib/libcompat.h"
-dadasdasdas
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
