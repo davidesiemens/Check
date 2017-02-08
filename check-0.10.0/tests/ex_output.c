@@ -8,7 +8,7 @@
 
 START_TEST(test_pass)
 {
-    ck_assert_msg(1 == 1, "Bad Test Result");
+    ck_assert_msg(2 == 1, "Bad Test Result");
 }
 END_TEST
 
